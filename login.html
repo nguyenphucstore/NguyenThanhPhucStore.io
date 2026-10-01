@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đăng nhập — BO STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login-wrap">
+<form class="login-form" onsubmit="return login(event)">
+  <a class="back" href="index.html">← Trang chủ</a>
+  <h1>Đăng nhập</h1>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" autocomplete="username" placeholder="Email" required>
+  <label for="password">Mật khẩu</label>
+  <div class="pass">
+    <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Mật khẩu" required>
+    <button type="button" id="toggle" aria-label="Show password">👁</button>
+  </div>
+  <button class="submit" type="submit">Sign in</button>
+  <div class="divider"><span>or</span></div>
+  <button class="social" type="button" onclick="alert('Kết nối Google OAuth khi có backend.')">Continue with Google</button>
+  <button class="social" type="button" onclick="alert('Kết nối Apple OAuth khi có backend.')">Continue with Apple</button>
+</form>
+</div>
+<script>
+const p=document.getElementById('password'), t=document.getElementById('toggle');
+t.onclick=()=>{const show=p.type==='text';p.type=show?'password':'text';t.setAttribute('aria-label',show?'Show password':'Hide password')};
+function login(e){e.preventDefault();alert('Form giao diện đã hoạt động. Muốn đăng nhập thật cần backend.');return false}
+</script>
+</body>
+</html>
